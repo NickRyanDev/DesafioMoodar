@@ -1,4 +1,4 @@
-# DesafioMoodar
+# GetBooks
 
 é um leitor de api's de livros capaz de buscar informações especificas de acordo com a necessidade.
 
