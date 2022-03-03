@@ -12,7 +12,8 @@ def Get_Books(): #pega todos os livros, teoricamente
         bookslist.append(books['books'][i])
     return bookslist
 
-def Get_PovCharacter(): #pega os principais personagens doo livro
+def Get_PovCharacter():
+    '''pega os principais personagens do livro'''
     url : 'https://anapioficeandfire.com/api/books/'
     r = requests.get(url)
     povcha = r.json()
@@ -21,16 +22,17 @@ def Get_PovCharacter(): #pega os principais personagens doo livro
         povchalist.append(povcha['povCharacters'][1])
     return povchalist
 
-def Get_Covers(): #pega as capas
+def Get_Covers():
+    '''pega as capas e coverte para o formato base64'''
     url = 'https://openlibrary.org/dev/doc/api/covers'
     r = requests.get(url)
     cover = r.json()
     coverb64 = base64.b64enconde(cover.encode())
-    #colocar um for in range para ler o dicionario de imagens e codificar apenas as imagens
     return coverb64
 
 
-def Get_Details(): #pega os detalhes dos personagens
+def Get_Details(): 
+    '''pega os detalhes dos personagens'''
     url: 'https://anapioficeandfire.com/api/books/'
     r = requests.get(url)
     character = r.json()
